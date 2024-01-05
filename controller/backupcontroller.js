@@ -5,6 +5,24 @@ const cron = require('node-cron');
 const backupfile=require("../model/backupfile")
 const autobackupfile=require("../model/autobackupfile")
 require("../connect")
+
+//only 4.2 version provide mongodump and mongo restore
+// https://www.mongodb.com/try/download/community-edition
+// version download 4.2.23     - mongodb community server version
+// install after check  this path check C:\Program Files\MongoDB\Server\4.2   mongodump.exec or mongorestore.exec
+// after check cmd mongodump --version 
+// open cmd set path common ==
+// C:\Users\Admin> set path="C:\Program Files\MongoDB\Server\4.2\bin"
+// C:\Users\Admin>mongodump --version
+// mongodump version: r4.2.25
+// git version: 41b59c2bfb5121e66f18cc3ef40055a1b5fb6c2e
+// Go version: go1.12.17
+//    os: windows
+//    arch: amd64
+//    compiler: gc
+/* 
+//mongodump  --username abc --password athh1500 --authenticationDatabase admin --out 07_04_2023
+// mongorestore --uri "mongodb+srv://admis:wQXcwMEA3YczMlFZ@cluster0.tiur85c.mongodb.net/?retryWrites=true&w=majority" 03_01_2024/
 /* 
 Basic mongo dump and restore commands, they contain more options you can have a look at man page for both of them.
 1. mongodump --db=rbac_tutorial --archive=./rbac.gzip --gzip
